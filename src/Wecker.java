@@ -56,7 +56,7 @@ public class Wecker {
             else {
                 if ((anzMinuten > 0) && ((anzMinuten % 2) == 1)) {
                     eieruhr.setWeckersound(eieruhr.getWeckersound() + "bimelimelim");
-                    anzMinuten--;
+                    anzMinuten++;
                 }
             }
         }
