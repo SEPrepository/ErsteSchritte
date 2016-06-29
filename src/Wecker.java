@@ -7,12 +7,14 @@ import java.util.Random;
 public class Wecker {
     private int zahl;
     private String weckersound;
+    private static int anzMinuten;
 
     public Wecker(String weckersound) {
         Random zufall;
         zufall = new Random();
         zahl = zufall.nextInt(10);
         this.weckersound = weckersound;
+        anzMinuten=zufall.nextInt(7);
     }
 
     public int getZahl() {
@@ -27,6 +29,14 @@ public class Wecker {
         return weckersound;
     }
 
+    public int getAnzMinuten() {
+        return anzMinuten;
+    }
+
+    public void setAnzMinuten(int anzMinuten) {
+        this.anzMinuten = anzMinuten;
+    }
+
     public void setWeckersound(String weckersound) {
         this.weckersound = weckersound;
     }
@@ -34,17 +44,22 @@ public class Wecker {
     public static void main(String[] args) {
 
         Wecker eieruhr = new Wecker("klingelingeling");
-        Wecker eieruhr1 = new Wecker("klingelingeling");
-        Wecker eieruhr2 = new Wecker("klingelingeling");
-        Wecker eieruhr3 = new Wecker("drpgj");
+
 
 
         for (int i = 0; i < eieruhr.getZahl(); i++) {
             System.out.println(eieruhr.getWeckersound());
-            System.out.println(eieruhr1.getWeckersound());
-            System.out.println(eieruhr2.getWeckersound());
-            System.out.println(eieruhr3.getWeckersound());
-
+            if((anzMinuten > 0) && ((anzMinuten % 2) == 0)) {
+                eieruhr.setWeckersound(eieruhr.getWeckersound() + "ringeding");
+                anzMinuten--;
+            }
+            else {
+                if ((anzMinuten > 0) && ((anzMinuten % 2) == 1)) {
+                    eieruhr.setWeckersound(eieruhr.getWeckersound() + "bimelimelim");
+                    anzMinuten--;
+                }
+            }
+        }
         }
     }
-}
+
