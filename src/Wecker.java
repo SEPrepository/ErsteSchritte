@@ -44,7 +44,7 @@ public class Wecker {
     public static void main(String[] args) {
 
         Wecker eieruhr = new Wecker("klingelingeling");
-
+        System.out.println("jetzt wird meinBranch mal länger...");
 
 
         for (int i = 0; i < eieruhr.getZahl(); i++) {
